@@ -1,6 +1,6 @@
 # Generating the LibriLight-Mix dataset
 
-This script supports generating noisy multiple-speaker mixture audio for training with the Libri-Light dataset, which can be served as training materials for large-scale robust speech separation, voice activity detection, overlapping speech detection, speaker counting and speaker diarization.
+This script supports generating noisy multiple-speaker mixture audio for training with the Libri-Light dataset, which can be served as training materials for large-scale noisy speech separation, voice activity detection, overlapping speech detection, speaker counting and speaker diarization.
 
 If you want to add reverb, please refer to [LibriLightMix-WHAMR](https://github.com/WangHelin1997/LibriLightMix-WHAMR).
 
