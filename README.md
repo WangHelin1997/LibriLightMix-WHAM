@@ -27,34 +27,26 @@ Change the following arguments in the script:
 * **wham_path**:  Folder where the unzipped wham_noise was downloaded (training set).
 * **librilight_path**: Folder where the unzipped Libri-Light data was downloaded.
 * **debug**: Whether to process a dummy dataset.
-* **max_duration**: The maximum duration of audio file to simulate.
+* **max_duration**: The duration of audio file to simulate.
 * **min_speaker**: The minimum number of speakers within the mixture audio.
 * **max_speaker**: The maximum number of speakers within the mixture audio.
 
-The simulated data will randomly sample a speaker number from **min_speaker** to **max_speaker**.
-
-### Creating reverberation meta files
-
-```sh
-$ python run_sample_reverb.py 
-```
+The simulated mixture audio will randomly sample a speaker number from **min_speaker** to **max_speaker**.
 
 ### Creating mixture files
 
 ```sh
-$ python create_wham_from_scratch.py --mono \
+$ python create_wham_from_scratch.py \
     --output-dir ./librilight_whamr/ \
-    --mode fix \
     --sr 16000 \
-    --fixed-len 5
+    --fixed-len 8
  
 ```
 
 The arguments for the script are:
 * **output-dir**: Where to write the new dataset.
-* **mode**: Length of the simulated speech: "fix" for a fixed length, "min" for the minimum length of the two utterences, and "max" for the maximum length of the two utterences.
 * **sr**: Sampling rate.
-* **fixed-len**: Fixed length in mode "fix".
+* **fixed-len**: The duration of audio file to simulate. Set the same as **max_duration** in **create_filenames.py**.
 
 ## Creating LibriLight-Mix parallelly with mulitple CPUs
 
