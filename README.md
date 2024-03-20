@@ -46,7 +46,7 @@ $ python create_wham_from_scratch.py \
 The arguments for the script are:
 * **output-dir**: Where to write the new dataset.
 * **sr**: Sampling rate.
-* **fixed-len**: The duration of audio file to simulate. Set the same as **max_duration** in **create_filenames.py**.
+* **fixed-len**: The duration of audio file to simulate. Set the same as **<max_duration>** in **<create_filenames.py>**.
 
 ## Creating LibriLight-Mix parallelly with mulitple CPUs
 
