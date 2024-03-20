@@ -61,35 +61,28 @@ Change the following arguments in the script:
 * **savename**: Name of the meta .csv file to save.
 * **tag**: Name of the meta .csv folder to save.
 * **debug**: Whether to process a dummy dataset.
-* **SOT**: Whether to process speakers in order (speaker1 speaks earlier than speaker2) for [serialized output training](https://arxiv.org/pdf/2003.12687.pdf).
-
-### Creating reverberation meta files
-
-```sh
-$ python run_sample_reverb_parallel.py 
-```
-Change the **filelists** according to the **tag**.
+* **max_duration**: The duration of audio file to simulate.
+* **min_speaker**: The minimum number of speakers within the mixture audio.
+* **max_speaker**: The maximum number of speakers within the mixture audio.
 
 ### Creating mixture files
 
 ```
-for i in $(seq 0 51)
+for i in $(seq 0 49)
 do
-    python create_wham_from_scratch_parallel.py --mono \
-        --output-dir "./LibrilightMix-medium/$i/" \
-        --filepath "data/medium/mix_2_spk_filenames_librilight_tr_medium$i.csv" \
-        --mode fix \
+    python create_wham_from_scratch_parallel.py \
+        --output-dir "./LibrilightMix-small/$i/" \
+        --filepath "data/small/mix_5_spk_filenames_librilight_tr_small$i.csv" \
         --sr 16000 \
-        --fixed-len 5
+        --fixed-len 8
 done
 ```
 
 The arguments for the script are:
 * **output-dir**: Where to write the new dataset.
 * **filepath**: Name of the saved meta .csv folder.
-* **mode**: Length of the simulated speech: "fix" for a fixed length, "min" for the minimum length of the two utterences, and "max" for the maximum length of the two utterences.
 * **sr**: Sampling rate.
-* **fixed-len**: Fixed length in mode "fix".
+* **fixed-len**: The duration of audio file to simulate. Set the same as **<max_duration>** in **<create_filenames_parallel.py>**.
 
 
 
@@ -99,25 +92,19 @@ For each utterance in the training (tr) set folder, the following wav files are 
 
 1. noise: contains the isolated background noise from WHAM!
 
-2. s1_anechoic: isolated data from speaker 1 without reverb, but with appropriate delays to align with s1_reverb
+2. s1: isolated data from speaker 1
 
-3. s2_anechoic: isolated data from speaker 2 without reverb, but with appropriate delays to align with s2_reverb
+3. s2: isolated data from speaker 2
 
-4. s1_reverb: isolated data from speaker 1 with reverberation
+4. s3: isolated data from speaker 3
 
-5. s2_reverb: isolated data from speaker 2 with reverberation
+5. s4: isolated data from speaker 4
 
-6. mix_single_anechoic: for speech enhancement, contains mixture of s1_anechoic and noise
+6. s5: isolated data from speaker 5
 
-7. mix_clean_anechoic: clean speech separation for two speakers, contains mixture of s1_anechoic and s2_anechoic.  The relative levels between speakers should match the original libri-light dataset, but the overall level of the mix will be different.
+7. mix_clean: clean speech separation for N speakers, contains mixture of s1, s2, ..., sN.
 
-8. mix_both_anechoic: contains mixtures of s1_anechoic, s2_anechoic, and noise
-
-9. mix_single_reverb: for speech enhancement, contains mixture of s1_reverb and noise
-
-10. mix_clean_reverb: clean speech separation for two reverberant speakers, contains a mixture of s1_reverb and s2_reverb.  The relative levels between speakers should match the original libri-light dataset, but the overall level of the mix will be different.
-
-11. mix_both_reverb: contains mixtures of s1_reverb, s2_reverb, and noise
+8. mix_noisy: noisy speech separation for N speakers, contains mixture of s1, s2, ..., sN, and noise.
 
 
 ## Reference
