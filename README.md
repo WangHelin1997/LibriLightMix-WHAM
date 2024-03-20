@@ -6,14 +6,8 @@ If you want to add reverb, please refer to [LibriLightMix-WHAMR](https://github.
 
 ## Python requirements
 
-Requires python 3.8, and the numpy, scipy, pandas, pyroomacoustics, and pysoundfile packages
+Requires python 3.8, and the numpy, scipy, pandas and tqdm packages
 ```sh
-$ pip install -r requirements.txt
-```
-
-If you cannot install the ```pyroomacoustics``` successfully, you can try:
-```sh
-$ pip install pyroomacoustics
 $ pip install -r requirements.txt
 ```
 
