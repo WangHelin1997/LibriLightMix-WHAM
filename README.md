@@ -31,7 +31,7 @@ Change the following arguments in the script:
 * **min_speaker**: The minimum number of speakers within the mixture audio.
 * **max_speaker**: The maximum number of speakers within the mixture audio.
 
-The simulated mixture audio will randomly sample a speaker number from **min_speaker** to **max_speaker**.
+The simulated mixture audio will randomly sample a speaker number from **<min_speaker>** to **<max_speaker>**.
 
 ### Creating mixture files
 
