@@ -5,8 +5,8 @@ import glob
 import json
 from tqdm import tqdm
 
-wham_path = '/data/lmorove1/hwang258/librimix/wham_noise/tr'
-librilight_path = '/data/lmorove1/hwang258/LibriLight-Mix/small'
+wham_path = './wham_noise/tr'
+librilight_path = './librilight/small'
 debug=True
 max_duration=8
 max_speaker=4 # only support less than 6 now
