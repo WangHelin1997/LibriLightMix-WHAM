@@ -7,7 +7,7 @@ from tqdm import tqdm
 
 wham_path = './wham_noise/tr'
 librilight_path = './librilight/small'
-debug=True
+debug=False
 max_duration=8
 max_speaker=4 # only support less than 6 now
 min_speaker=0
