@@ -6,7 +6,7 @@ If you want to add reverb, please refer to [LibriLightMix-WHAMR](https://github.
 
 ## Python requirements
 
-Requires python 3.8, and the numpy, scipy, pandas and tqdm packages
+Requires python 3.8, and the numpy, scipy, and pandas packages
 ```sh
 $ pip install -r requirements.txt
 ```
@@ -27,7 +27,11 @@ Change the following arguments in the script:
 * **wham_path**:  Folder where the unzipped wham_noise was downloaded (training set).
 * **librilight_path**: Folder where the unzipped Libri-Light data was downloaded.
 * **debug**: Whether to process a dummy dataset.
-* **SOT**: Whether to process speakers in order (speaker1 speaks earlier than speaker2) for [serialized output training](https://arxiv.org/pdf/2003.12687.pdf).
+* **max_duration**: The maximum duration of audio file to simulate.
+* **min_speaker**: The minimum number of speakers within the mixture audio.
+* **max_speaker**: The maximum number of speakers within the mixture audio.
+
+The simulated data will randomly sample a speaker number from **min_speaker** to **max_speaker**.
 
 ### Creating reverberation meta files
 
