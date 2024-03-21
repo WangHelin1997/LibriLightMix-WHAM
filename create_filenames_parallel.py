@@ -129,7 +129,7 @@ def process_one(i, tag, savename, spks, librilight_path, noise_files, debug):
 # Reading all noise files
 noise_files = [os.path.abspath(os.path.join(wham_path, file)) for file in os.listdir(wham_path) if file.endswith('.wav')]
 spks = [name for name in os.listdir(librilight_path) if os.path.isdir(os.path.join(librilight_path, name)) and not os.path.isfile(os.path.join(librilight_path, name))]
-num_subspks = 50
+num_subspks = 20
 subspks_size = len(spks) // num_subspks
 random.shuffle(spks)
 # Split the list into subspks
