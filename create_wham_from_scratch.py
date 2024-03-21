@@ -25,7 +25,7 @@ def create_one(i_utt, output_name, wsjmix_df, SAMPLE_RATES, output_root, splt, F
     output_path = os.path.join(output_root, wav_dir, splt)
     if not os.path.exists(os.path.join(output_path, NOISE_DIR, output_name)):
         utt_row = wsjmix_df[wsjmix_df['output_filename'] == output_name]
-        speaker_num = utt_row['speaker_num'].iloc[0]
+        speaker_num = utt_row['speaker_number'].iloc[0]
 
         s1_path = utt_row['s1_path'].iloc[0]
         s2_path = utt_row['s2_path'].iloc[0]
