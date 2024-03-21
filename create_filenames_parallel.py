@@ -47,7 +47,7 @@ def process_one(i, tag, savename, spks, librilight_path, noise_files, debug):
                     count+=1
                     copied_spks = spks[:]
                     copied_spks.remove(spk)
-                    print(len(copied_spks))
+                    # print(len(copied_spks))
                     speaker_number = random.randint(min_speaker, max_speaker)
                     another_spks = random.sample(copied_spks, 4)
                     another_audiofiles1 = glob.glob(os.path.join(librilight_path, another_spks[0], '**/*.flac'), recursive=True)
