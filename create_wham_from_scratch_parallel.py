@@ -81,14 +81,14 @@ def create_one(i_utt, output_name, wsjmix_df, SAMPLE_RATES, output_root, splt, F
         if speaker_num > 0:
             sf.write(os.path.join(output_path, S1_DIR, output_name), s1, SAMPLE_RATES, subtype='FLOAT')
         if speaker_num > 1:
-            sf.write(os.path.join(output_path, S2_DIR, output_name), s1, SAMPLE_RATES, subtype='FLOAT')
+            sf.write(os.path.join(output_path, S2_DIR, output_name), s2, SAMPLE_RATES, subtype='FLOAT')
         if speaker_num > 2:
-            sf.write(os.path.join(output_path, S3_DIR, output_name), s1, SAMPLE_RATES, subtype='FLOAT')
+            sf.write(os.path.join(output_path, S3_DIR, output_name), s3, SAMPLE_RATES, subtype='FLOAT')
         if speaker_num > 3:
-            sf.write(os.path.join(output_path, S4_DIR, output_name), s1, SAMPLE_RATES, subtype='FLOAT')
+            sf.write(os.path.join(output_path, S4_DIR, output_name), s4, SAMPLE_RATES, subtype='FLOAT')
         if speaker_num > 4:
-            sf.write(os.path.join(output_path, S5_DIR, output_name), s1, SAMPLE_RATES, subtype='FLOAT')
-        sf.write(os.path.join(output_path, NOISE_DIR, output_name), s1, SAMPLE_RATES, subtype='FLOAT')
+            sf.write(os.path.join(output_path, S5_DIR, output_name), s5, SAMPLE_RATES, subtype='FLOAT')
+        sf.write(os.path.join(output_path, NOISE_DIR, output_name), noise_samples_full, SAMPLE_RATES, subtype='FLOAT')
 
     
         if (i_utt + 1) % 500 == 0:
